@@ -4,31 +4,46 @@
 //for latest offsets check the last page of this thread:
 //https://www.unknowncheats.me/forum/battlefield-v/288137-battlefield-reversing-struct-offsets-thread.html
 
-#define OFFSET_CLIENTGAMECONTEXT 0x1446199F8
-#define OFFSET_DXRENDERER        0x1446C60D8
-#define OFFSET_GAMERENDERER      0x1446C5678
-extern void* OFFSET_ObfuscationMgr;
 
-#define OFFSET_DEBUGRENDERER     0x1405AE030 //
-#define OFFSET_DrawText          0x1405AFFF0 //
-#define OFFSET_DrawLine          0x1405AFAD0 //
-#define OFFSET_DrawRect2D        0x145A86840 //
+#define OFFSET_CLIENTGAMECONTEXT 0x144727298 //12/05/2020
+#define OFFSET_GAMERENDERER 0x1447cbe78  	//12/05/2020
+#define OFFSET_DXRENDERER        0x1447cc8d8 //12/05/2020  verificar novamente no ida
+#define OFFSET_DEBUGRENDERER     0x1405BEAC0  //12/05/2020
+#define OFFSET_DrawText           0x1405C0A90 //12/05/2020
+#define OFFSET_DrawLine          0x1405C0570 //12/05/2020 verificar novamente no ida
+#define OFFSET_DrawRect2D        0x145BD9CD0 //12/05/2020 
+#define OFFSET_BORDERINPITNODE 0x14421cfa0 //12/05/2020
+#define OFFSET_DISPATCHMESSAGE  0x1405C5590  //12/05/2020
 
 #define ValidPointer( pointer ) ( pointer != NULL && (DWORD_PTR)pointer >= 0x10000 && (DWORD_PTR)pointer < 0x00007FFFFFFEFFFF /*&& some other checks*/ )
 
 extern DWORD OFFSET_Soldier;
 extern DWORD OFFSET_Vehicle;
-#define OFFSET_BoneCollisionComponent 0x0700
-#define OFFSET_HealthComponent 0x310
-#define OFFSET_occluded 0xA9B
-#define OFFSET_PredictedController 0x880 //https://github.com/Speedi13/BFV-Decryption/blob/master/BfvDecryptionDemo/DllMain.cpp#L22
+#define OFFSET_BoneCollisionComponent 0x06E0 //29/10/2019
+#define OFFSET_HealthComponent 0x02E8 //29/10/2019
+#define OFFSET_ClientSoldierWeapon 0x5EF0 //29/10/2019
+#define OFFSET_WeaponHnandler 0x0BB0 //29/10/2019
+#define OFFSET_WeaponActiveSlot 0x0C70 //29/10/2019
+#define OFFSET_occluded 0xA7B //29/10/2019
+#define OFFSET_PredictedController 0x860 //https://github.com/Speedi13/BFV-Decryption/blob/master/BfvDecryptionDemo/DllMain.cpp#L22
 #define OFFSET_Player_TeamId 0x1C48
-
+#define OFFSET_Player_EntryId 0x1D78
+#define OFFSET_PlayerView  0x1DC8
+#define OFFSET_PoseTypet 0x0828 //03/09/2019
+#define OFFSET_AABBVehicle 0x460 //29/10/2019
+#define OFFSET_AutorathiveYaw 0x066C  //29/10/2019 
+#define OFFESET_GameWorld 0x0130
+#define OFFESET_M_pPlayer 0x03A8
 #define D3DX_PI    (3.14159265358979323846)
 #define D3DX_1BYPI ( 1.0 / D3DX_PI )
-
+#define _HavokPhysicsData_
 #define D3DXToRadian( degree ) ((degree) * (D3DX_PI / 180.0))
 #define D3DXToDegree( radian ) ((radian) * (180.0 / D3DX_PI))
+#define OFFESET_VehicleSpeed 0x0258
+#define OFFSET_ClientChassisComponent 0x0608
+#define OFSET_CharacterPhysicsBody 0x0730
+#define OFFSET_Chams 0x4EC
+#define OFFSET_IsSpectator 0x1C3A
 
 #define ResolveRelativePtr(Address) ((ULONG_PTR)(Address) + *(__int32*)(Address) + sizeof(__int32))
 
